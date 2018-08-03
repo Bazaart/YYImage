@@ -941,6 +941,7 @@ CGImageRef YYCGImageCreateAffineTransformCopy(CGImageRef imageRef, CGAffineTrans
     free(src.data);
     src.data = NULL;
     
+    // !!!:
     tmpProvider = CGDataProviderCreateWithData(tmp.data, tmp.data, destHeight * destBytesPerRow, YYCGDataProviderReleaseDataCallback);
     if (!tmpProvider) goto fail;
     tmp.data = NULL; // hold by provider
