@@ -452,4 +452,39 @@ NS_INLINE void ImageCGDataProviderReleaseDataCallback(void *info, const void *da
     return [self createImageCopyWithImageRef:imageRef transform:transform targetSize:targetSize targetBitmapInfo:targetBitmapInfo];
 }
 
+/**
+ An array of NSNumber objects, shows the best order for path scale search.
+ e.g. iPhone3GS:@[@1,@2,@3] iPhone5:@[@2,@3,@1]  iPhone6 Plus:@[@3,@2,@1]
+ */
++ (NSArray *)bundlePreferredScales {
+    static NSArray *scales;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        CGFloat screenScale = [UIScreen mainScreen].scale;
+        if (screenScale <= 1) {
+            scales = @[@1,@2,@3];
+        } else if (screenScale <= 2) {
+            scales = @[@2,@3,@1];
+        } else {
+            scales = @[@3,@2,@1];
+        }
+    });
+    return scales;
+}
+
++ (CGFloat)scaleOfFileName:(NSString *)fileName {
+    if (fileName.length == 0 || [fileName hasSuffix:@"/"]) return 1;
+    NSString *name = fileName.stringByDeletingPathExtension;
+    __block CGFloat scale = 1;
+    
+    NSRegularExpression *pattern = [NSRegularExpression regularExpressionWithPattern:@"@[0-9]+\\.?[0-9]*x$" options:NSRegularExpressionAnchorsMatchLines error:nil];
+    [pattern enumerateMatchesInString:name options:kNilOptions range:NSMakeRange(0, name.length) usingBlock:^(NSTextCheckingResult *result, NSMatchingFlags flags, BOOL *stop) {
+        if (result.range.location >= 3) {
+            scale = [fileName substringWithRange:NSMakeRange(result.range.location + 1, result.range.length - 2)].doubleValue;
+        }
+    }];
+    
+    return scale;
+}
+
 @end

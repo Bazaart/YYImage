@@ -18,4 +18,7 @@
 
 + (CGImageRef)createImageCopyWithImageRef:(CGImageRef)imageRef orientation:(UIImageOrientation)orientation targetBitmapInfo:(CGBitmapInfo)targetBitmapInfo;
 
++ (NSArray *)bundlePreferredScales;
++ (CGFloat)scaleOfFileName:(NSString *)fileName;
+
 @end

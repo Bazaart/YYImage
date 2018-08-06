@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "SingletonOption.h"
 
 @interface ViewController ()
 
@@ -25,5 +26,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)switchAction:(UISwitch *)sender {
+    [SingletonOption sharedInstance].useYYImage = sender.on;
+}
 
 @end
