@@ -12,20 +12,20 @@
 #import "FrameImageCollectionViewController.h"
 #import "GifImageEncoder.h"
 
-static NSString * const kImageKey = @"iamge";
+static NSString * const kImageKey = @"image";
 static NSString * const kFrameDurationKey = @"duration";
 
-static const CGFloat kFrameInterval = 0.5;
+static const CGFloat kFrameInterval = 0.1;
 static const NSInteger kFrameCount = 10;
 
 @interface VideoFrameViewController ()
 
 @property (nonatomic, strong) NSURL *videoURL;
+@property (nonatomic, strong) AVAssetImageGenerator *imageGenerator;
+@property (nonatomic, strong) NSArray *captureTimes;
 
 @property (weak, nonatomic) IBOutlet PlayerView *playerView;
-@property (nonatomic, strong) AVAssetImageGenerator *imageGenerator;
 @property (nonatomic, strong) FrameImageCollectionViewController *frameImageController;
-@property (nonatomic, strong) NSArray *captureTimes;
 @property (nonatomic, strong) NSArray *frameImages;
 @property (weak, nonatomic) IBOutlet UIImageView *animatedImageView;
 

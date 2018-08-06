@@ -88,4 +88,3 @@
 - (NSDictionary *)imageProperties;
 
 @end
-

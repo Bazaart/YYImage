@@ -6,7 +6,7 @@
 //  Copyright © 2018年 Bq. All rights reserved.
 //
 
-#import "GifImageCodec.h"
+#import "GifImageDecoder.h"
 #import <pthread.h>
 #import "ImageUtil.h"
 #import "UIImage+ImageCoder.h"

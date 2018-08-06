@@ -117,7 +117,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-50.625" y="788.75"/>
+            <point key="canvasLocation" x="-49" y="873"/>
         </scene>
         <!--Frame Image Collection View Controller-->
         <scene sceneID="Ch8-FA-fYU">
@@ -165,7 +165,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ljt-tw-ydw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-51" y="1331"/>
+            <point key="canvasLocation" x="-49" y="1465"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="8gh-Hy-g3y">
@@ -198,8 +198,28 @@
                                             <segue destination="HSR-5M-hTb" kind="show" id="8Qd-4O-Urc"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="XKb-Bx-RHm" style="IBUITableViewCellStyleDefault" id="FZd-H7-kDB">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="L68-Qk-K3J" style="IBUITableViewCellStyleDefault" id="lsk-cZ-eYL">
                                         <rect key="frame" x="0.0" y="79" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lsk-cZ-eYL" id="UXy-db-2d9">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="encode GIF" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="L68-Qk-K3J">
+                                                    <rect key="frame" x="16" y="0.0" width="288" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="2dE-pG-X3X" kind="show" id="zXB-RI-s64"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="XKb-Bx-RHm" style="IBUITableViewCellStyleDefault" id="FZd-H7-kDB">
+                                        <rect key="frame" x="0.0" y="123" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FZd-H7-kDB" id="XTQ-hy-aCA">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
@@ -227,6 +247,32 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ml5-u5-i4U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="951" y="1043"/>
+        </scene>
+        <!--Gif Encode View Controller-->
+        <scene sceneID="pbK-i0-kQo">
+            <objects>
+                <viewController id="2dE-pG-X3X" customClass="GifEncodeViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ODT-Mt-zVG"/>
+                        <viewControllerLayoutGuide type="bottom" id="DR7-d0-RRd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wUe-L7-1I3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="372"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <toolbarItems>
+                        <barButtonItem title="截图并生成 Gif" id="4CK-7L-ofz">
+                            <connections>
+                                <action selector="captureAndEncodeAction:" destination="2dE-pG-X3X" id="ysx-QJ-wv9"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U5h-Qt-KcO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="613" y="1696"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="d2R-cV-1yt">

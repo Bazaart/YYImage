@@ -15,6 +15,10 @@
     NSMutableArray *_images, *_durations;
 }
 
+- (void)dealloc {
+    NSLog(@"%s", __FUNCTION__);
+}
+
 - (instancetype)init {
     if (self = [super init]) {
         _images = [NSMutableArray array];
