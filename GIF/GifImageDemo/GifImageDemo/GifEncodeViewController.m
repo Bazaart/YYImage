@@ -32,9 +32,10 @@ static const NSInteger kFrameCount = 20;
     
     _imageGenerator = [AVAssetImageGenerator assetImageGeneratorWithAsset:[AVAsset assetWithURL:_videoURL]];
     _imageGenerator.requestedTimeToleranceBefore = _imageGenerator.requestedTimeToleranceAfter = kCMTimeZero;
+    _imageGenerator.appliesPreferredTrackTransform = YES;
     //    _imageGenerator.maximumSize = CGSizeMake(120, 120);
     
-    CGFloat startTime = 23;
+    CGFloat startTime = 2;
     CGFloat frameInterval = kFrameInterval;
     NSInteger frameCount = kFrameCount;
     NSMutableArray *times = [NSMutableArray array];
