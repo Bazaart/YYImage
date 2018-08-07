@@ -29,7 +29,6 @@
     if (_source) CFRelease(_source);
     if (_blendCanvas) CFRelease(_blendCanvas);
     pthread_mutex_destroy(&_lock);
-    NSLog(@"%s", __FUNCTION__);
 }
 
 #pragma mark - convenience

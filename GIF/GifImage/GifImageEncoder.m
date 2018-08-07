@@ -15,9 +15,7 @@
     NSMutableArray *_images, *_durations;
 }
 
-- (void)dealloc {
-    NSLog(@"%s", __FUNCTION__);
-}
+- (void)dealloc {}
 
 - (instancetype)init {
     if (self = [super init]) {

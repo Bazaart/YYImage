@@ -37,6 +37,7 @@
 /// @param index  Frame index (zero based).
 - (NSTimeInterval)animatedImageDurationAtIndex:(NSUInteger)index;
 
+/// Use GifImage to decode GIF and return UIImage instance
 + (UIImage *)gifImageName:(NSString *)name;
 
 @end

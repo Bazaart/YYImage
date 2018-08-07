@@ -35,7 +35,7 @@ typedef NS_ENUM(NSUInteger, ImageBlendOperation) {
 @interface ImageFrame : NSObject <NSCopying>
 
 /// Frame index (zero based)
-@property (nonatomic) NSUInteger index;
+@property (nonatomic, assign) NSUInteger index;
 // Frame pixel size
 @property (nonatomic, assign) NSUInteger pixelWidth;
 @property (nonatomic, assign) NSUInteger pixelHeight;
@@ -43,13 +43,13 @@ typedef NS_ENUM(NSUInteger, ImageBlendOperation) {
 @property (nonatomic, assign) NSUInteger pixelOffsetX;
 @property (nonatomic, assign) NSUInteger pixelOffsetY;
 /// Frame duration in seconds
-@property (nonatomic) NSTimeInterval duration;
+@property (nonatomic, assign) NSTimeInterval duration;
 /// Frame dispose method.
-@property (nonatomic) ImageDisposeMethod dispose;
+@property (nonatomic, assign) ImageDisposeMethod dispose;
 /// Frame blend operation.
-@property (nonatomic) ImageBlendOperation blend;
+@property (nonatomic, assign) ImageBlendOperation blend;
 /// The image.
-@property (nullable, nonatomic, strong) UIImage *image;
+@property (nonatomic, strong) UIImage *image;
 + (instancetype)frameWithImage:(UIImage *)image;
 
 @end

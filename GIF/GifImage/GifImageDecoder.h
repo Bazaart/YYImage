@@ -16,7 +16,6 @@
 @property (nonatomic, assign, readonly) CGFloat scale;
 @property (nonatomic, assign, readonly) NSUInteger frameCount;
 @property (nonatomic, assign, readonly) NSUInteger loopCount;
-//@property (nonatomic, assign, readonly) CGSize size;
 @property (nonatomic, readonly) NSUInteger pixelWidth;
 @property (nonatomic, readonly) NSUInteger pixelHeight;
 @property (nonatomic, assign, readonly) BOOL finalized;
