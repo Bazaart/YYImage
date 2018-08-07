@@ -12,11 +12,11 @@
 #define FOUR_CC(c1,c2,c3,c4) ((uint32_t)(((c4) << 24) | ((c3) << 16) | ((c2) << 8) | (c1)))
 #define TWO_CC(c1,c2) ((uint16_t)(((c2) << 8) | (c1)))
 
-NS_INLINE CGFloat radiansWithDegrees(CGFloat degrees) {
+NS_INLINE CGFloat RadiansWithDegrees(CGFloat degrees) {
     return degrees * M_PI / 180;
 }
 
-NS_INLINE size_t byteAlign(size_t size, size_t alignment) {
+NS_INLINE size_t ByteAlign(size_t size, size_t alignment) {
     return ((size + (alignment - 1)) / alignment) * alignment;
 }
 
@@ -348,7 +348,7 @@ NS_INLINE void ImageCGDataProviderReleaseDataCallback(void *info, const void *da
     vImage_Buffer src = {0}, tmp = {0}, target = {0};
     if (![self can32BitFormatDecodeToBitmapBufferWithImageRef:imageRef targetImageBufer:&src bitmapInfo:kCGImageAlphaFirst | kCGBitmapByteOrderDefault]) return NULL;
     
-    size_t targetBytesPerRow = byteAlign(targetWidth * 4, 32);
+    size_t targetBytesPerRow = ByteAlign(targetWidth * 4, 32);
     tmp.data = malloc(targetHeight * targetBytesPerRow);
     
     CGImageRef (^failHandler)(void) = ^ {
@@ -412,16 +412,16 @@ NS_INLINE void ImageCGDataProviderReleaseDataCallback(void *info, const void *da
     BOOL swapWidthAndHeight = NO;
     switch (orientation) {
         case UIImageOrientationDown:{
-            transform = CGAffineTransformMakeRotation(radiansWithDegrees(180));
+            transform = CGAffineTransformMakeRotation(RadiansWithDegrees(180));
             transform = CGAffineTransformTranslate(transform, -width, -height);
         } break;
         case UIImageOrientationLeft:{
-            transform = CGAffineTransformMakeRotation(radiansWithDegrees(90));
+            transform = CGAffineTransformMakeRotation(RadiansWithDegrees(90));
             transform = CGAffineTransformTranslate(transform, 0, -height);
             swapWidthAndHeight = YES;
         } break;
         case UIImageOrientationRight:{
-            transform = CGAffineTransformMakeRotation(radiansWithDegrees(-90));
+            transform = CGAffineTransformMakeRotation(RadiansWithDegrees(-90));
             transform = CGAffineTransformTranslate(transform, -width, 0);
             swapWidthAndHeight =  YES;
         } break;
@@ -434,13 +434,13 @@ NS_INLINE void ImageCGDataProviderReleaseDataCallback(void *info, const void *da
             transform = CGAffineTransformScale(transform, 1, -1);
         } break;
         case UIImageOrientationLeftMirrored:{
-            transform = CGAffineTransformMakeRotation(radiansWithDegrees(-90));
+            transform = CGAffineTransformMakeRotation(RadiansWithDegrees(-90));
             transform = CGAffineTransformScale(transform, 1, -1);
             transform = CGAffineTransformTranslate(transform, -width, -height);
             swapWidthAndHeight = YES;
         } break;
         case UIImageOrientationRightMirrored:{
-            transform = CGAffineTransformMakeRotation(radiansWithDegrees(90));
+            transform = CGAffineTransformMakeRotation(RadiansWithDegrees(90));
             transform = CGAffineTransformScale(transform, 1, -1);
             swapWidthAndHeight = YES;
         } break;

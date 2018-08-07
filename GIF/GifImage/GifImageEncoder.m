@@ -121,7 +121,7 @@
             
             if ([imageSrc isKindOfClass:[UIImage class]]) {
                 UIImage *image = imageSrc;
-                // !!!: 若不处理图片方向，次逻辑可跳过
+                // !!!: 若不处理图片方向，此逻辑可跳过
                 if (image.imageOrientation != UIImageOrientationUp && image.CGImage) {
                     CGBitmapInfo info = CGImageGetBitmapInfo(image.CGImage) | CGImageGetAlphaInfo(image.CGImage);
                     CGImageRef rotatedImageRef = [ImageUtil createImageCopyWithImageRef:image.CGImage orientation:image.imageOrientation targetBitmapInfo:info];
