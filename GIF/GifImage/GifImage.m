@@ -14,9 +14,6 @@
 @implementation GifImage
 {
     GifImageDecoder *_decoder;
-//    NSArray *_preloadedFrames;
-//    dispatch_semaphore_t _lock;
-//    NSUInteger _bytesPerFrame;
 }
 
 + (instancetype)imageNamed:(NSString *)name {

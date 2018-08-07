@@ -48,6 +48,10 @@
 //        [_imageView startAnimating];
     }
 }
+- (IBAction)startOrStopAnimationAction:(UIBarButtonItem *)sender {
+    _imageView.animating ? [_imageView stopAnimating] : [_imageView startAnimating];
+    _yyAnimatedImageView.animating ? [_yyAnimatedImageView startAnimating] : [_yyAnimatedImageView stopAnimating];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

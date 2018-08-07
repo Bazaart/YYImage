@@ -32,7 +32,6 @@
 		FB96FB922118372B00B21135 /* local.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = FB96FB8F2118369900B21135 /* local.mp4 */; };
 		FB96FB95211838FE00B21135 /* GifImage.m in Sources */ = {isa = PBXBuildFile; fileRef = FB96FB94211838FE00B21135 /* GifImage.m */; };
 		FB96FB982118455700B21135 /* GifDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB96FB972118455700B21135 /* GifDisplayViewController.m */; };
-		FB96FB9B2118478200B21135 /* GifImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = FB96FB9A2118478200B21135 /* GifImageView.m */; };
 		FB96FBA12118502900B21135 /* SingletonOption.m in Sources */ = {isa = PBXBuildFile; fileRef = FB96FBA02118502900B21135 /* SingletonOption.m */; };
 /* End PBXBuildFile section */
 
@@ -83,8 +82,6 @@
 		FB96FB94211838FE00B21135 /* GifImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GifImage.m; sourceTree = "<group>"; };
 		FB96FB962118455700B21135 /* GifDisplayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GifDisplayViewController.h; sourceTree = "<group>"; };
 		FB96FB972118455700B21135 /* GifDisplayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GifDisplayViewController.m; sourceTree = "<group>"; };
-		FB96FB992118478200B21135 /* GifImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GifImageView.h; sourceTree = "<group>"; };
-		FB96FB9A2118478200B21135 /* GifImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GifImageView.m; sourceTree = "<group>"; };
 		FB96FB9F2118502900B21135 /* SingletonOption.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SingletonOption.h; sourceTree = "<group>"; };
 		FB96FBA02118502900B21135 /* SingletonOption.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SingletonOption.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -179,8 +176,6 @@
 				FB866BB721143D2300411DEF /* UIImage+ImageCoder.m */,
 				FB96FB93211838FE00B21135 /* GifImage.h */,
 				FB96FB94211838FE00B21135 /* GifImage.m */,
-				FB96FB992118478200B21135 /* GifImageView.h */,
-				FB96FB9A2118478200B21135 /* GifImageView.m */,
 			);
 			name = GifImage;
 			path = ../../GifImage;
@@ -298,7 +293,6 @@
 				FB96FB982118455700B21135 /* GifDisplayViewController.m in Sources */,
 				FB96FB8B211824D700B21135 /* GifEncodeViewController.m in Sources */,
 				FB96FB802117DB0A00B21135 /* FrameImageCell.m in Sources */,
-				FB96FB9B2118478200B21135 /* GifImageView.m in Sources */,
 				FB866BB12113E3C400411DEF /* ImageUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

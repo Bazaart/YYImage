@@ -138,7 +138,7 @@
     if (imageRef && extendToCanvas) {
         size_t width = CGImageGetWidth(imageRef);
         size_t height = CGImageGetHeight(imageRef);
-        if (width == _width && height == _height) {
+        if (width == _pixelWidth && height == _pixelHeight) {
             CGImageRef imageRefExtended = [ImageUtil createDecodedImageCopyWithImageRef:imageRef decodeForDisplay:YES];
             if (imageRefExtended) {
                 CFRelease(imageRef);
@@ -146,10 +146,10 @@
                 if (decoded) *decoded = YES;
             }
         } else {
-            CGContextRef context = CGBitmapContextCreate(NULL, _width, _height, 8, 0, [ImageUtil colorSpaceGetDeviceRGB], kCGBitmapByteOrder32Host | kCGImageAlphaPremultipliedFirst);
+            CGContextRef context = CGBitmapContextCreate(NULL, _pixelWidth, _pixelHeight, 8, 0, [ImageUtil colorSpaceGetDeviceRGB], kCGBitmapByteOrder32Host | kCGImageAlphaPremultipliedFirst);
             if (context) {
                 // 添加位移逻辑
-                CGContextDrawImage(context, CGRectMake(_width - width, _height - height, width, height), imageRef);
+                CGContextDrawImage(context, CGRectMake(_pixelWidth - width, _pixelHeight - height, width, height), imageRef);
                 CGImageRef imageRefExtended = CGBitmapContextCreateImage(context);
                 CFRelease(context);
                 if (imageRefExtended) {
@@ -166,7 +166,7 @@
 - (BOOL)_createBlendContextIfNeeded {
     if (!_blendCanvas) {
         _blendFrameIndex = NSNotFound;
-        _blendCanvas = CGBitmapContextCreate(NULL, _width, _height, 8, 0, [ImageUtil colorSpaceGetDeviceRGB], kCGBitmapByteOrder32Host | kCGImageAlphaPremultipliedFirst);
+        _blendCanvas = CGBitmapContextCreate(NULL, _pixelWidth, _pixelHeight, 8, 0, [ImageUtil colorSpaceGetDeviceRGB], kCGBitmapByteOrder32Host | kCGImageAlphaPremultipliedFirst);
     }
     return _blendCanvas != NULL;
 }
@@ -205,9 +205,9 @@
                 CFRelease(unblendImage);
             }
             imageRef = CGBitmapContextCreateImage(_blendCanvas);
-            CGContextClearRect(_blendCanvas, CGRectMake(0, 0, _width, _height));
+            CGContextClearRect(_blendCanvas, CGRectMake(0, 0, _pixelWidth, _pixelHeight));
             if (previousImage) {
-                CGContextDrawImage(_blendCanvas, CGRectMake(0, 0, _width, _height), previousImage);
+                CGContextDrawImage(_blendCanvas, CGRectMake(0, 0, _pixelWidth, _pixelHeight), previousImage);
                 CFRelease(previousImage);
             }
         } else {
@@ -219,9 +219,9 @@
                 CFRelease(unblendImage);
             }
             imageRef = CGBitmapContextCreateImage(_blendCanvas);
-            CGContextClearRect(_blendCanvas, CGRectMake(0, 0, _width, _height));
+            CGContextClearRect(_blendCanvas, CGRectMake(0, 0, _pixelWidth, _pixelHeight));
             if (previousImage) {
-                CGContextDrawImage(_blendCanvas, CGRectMake(0, 0, _width, _height), previousImage);
+                CGContextDrawImage(_blendCanvas, CGRectMake(0, 0, _pixelWidth, _pixelHeight), previousImage);
                 CFRelease(previousImage);
             }
         }
@@ -299,7 +299,7 @@
         _blendFrameIndex = index;
     } else { // should draw canvas from previous frame
         _blendFrameIndex = NSNotFound;
-        CGContextClearRect(_blendCanvas, CGRectMake(0, 0, _width, _height));
+        CGContextClearRect(_blendCanvas, CGRectMake(0, 0, _pixelWidth, _pixelHeight));
         
         if (frame.blendFromIndex == frame.index) {
             CGImageRef unblendedImage = [self _newUnblendedImageAtIndex:index extendToCanvas:NO decoded:NULL];
@@ -332,8 +332,8 @@
     image.decodedForDisplay = YES;
     frame.image = image;
     if (extendToCanvas) {
-        frame.pixelWidth = _width;
-        frame.pixelHeight = _height;
+        frame.pixelWidth = _pixelWidth;
+        frame.pixelHeight = _pixelHeight;
         frame.pixelOffsetX = 0;
         frame.pixelOffsetY = 0;
         frame.dispose = ImageDisposeNone;
@@ -358,8 +358,8 @@
 
 - (void)_updateSource {
     // update source ImageIO
-    _width = 0;
-    _height = 0;
+    _pixelWidth = 0;
+    _pixelHeight = 0;
     _orientation = UIImageOrientationUp;
     _loopCount = 0;
     dispatch_semaphore_wait(_framesLock, DISPATCH_TIME_FOREVER);
@@ -433,8 +433,8 @@
             frame.duration = duration;
             
             if (i == 0) { // init first frame
-                _width = width;
-                _height = height;
+                _pixelWidth = width;
+                _pixelHeight = height;
                 value = CFDictionaryGetValue(properties, kCGImagePropertyOrientation);
                 if (value) {
                     CFNumberGetValue(value, kCFNumberNSIntegerType, &orientationValue);
