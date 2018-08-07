@@ -21,7 +21,6 @@
 		FB7549922113105B007A43B8 /* GifImageDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = FB7549912113105B007A43B8 /* GifImageDecoder.m */; };
 		FB866BB12113E3C400411DEF /* ImageUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = FB866BB02113E3C400411DEF /* ImageUtil.m */; };
 		FB866BB42113F31D00411DEF /* ImageFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = FB866BB32113F31D00411DEF /* ImageFrame.m */; };
-		FB866BB821143D2300411DEF /* UIImage+ImageCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = FB866BB721143D2300411DEF /* UIImage+ImageCoder.m */; };
 		FB866BBB21148D3600411DEF /* PlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = FB866BBA21148D3600411DEF /* PlayerView.m */; };
 		FB866BBE21148E6800411DEF /* VideoFrameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB866BBD21148E6800411DEF /* VideoFrameViewController.m */; };
 		FB96FB802117DB0A00B21135 /* FrameImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FB96FB7F2117DB0A00B21135 /* FrameImageCell.m */; };
@@ -62,8 +61,6 @@
 		FB866BB02113E3C400411DEF /* ImageUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageUtil.m; sourceTree = "<group>"; };
 		FB866BB22113F31D00411DEF /* ImageFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageFrame.h; sourceTree = "<group>"; };
 		FB866BB32113F31D00411DEF /* ImageFrame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageFrame.m; sourceTree = "<group>"; };
-		FB866BB621143D2300411DEF /* UIImage+ImageCoder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageCoder.h"; sourceTree = "<group>"; };
-		FB866BB721143D2300411DEF /* UIImage+ImageCoder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageCoder.m"; sourceTree = "<group>"; };
 		FB866BB921148D3600411DEF /* PlayerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayerView.h; sourceTree = "<group>"; };
 		FB866BBA21148D3600411DEF /* PlayerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayerView.m; sourceTree = "<group>"; };
 		FB866BBC21148E6800411DEF /* VideoFrameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoFrameViewController.h; sourceTree = "<group>"; };
@@ -172,8 +169,6 @@
 				FB866BB32113F31D00411DEF /* ImageFrame.m */,
 				FB866BAF2113E3C400411DEF /* ImageUtil.h */,
 				FB866BB02113E3C400411DEF /* ImageUtil.m */,
-				FB866BB621143D2300411DEF /* UIImage+ImageCoder.h */,
-				FB866BB721143D2300411DEF /* UIImage+ImageCoder.m */,
 				FB96FB93211838FE00B21135 /* GifImage.h */,
 				FB96FB94211838FE00B21135 /* GifImage.m */,
 			);
@@ -284,7 +279,6 @@
 				FB75498C211309A1007A43B8 /* YYImageCoder.m in Sources */,
 				FB7549922113105B007A43B8 /* GifImageDecoder.m in Sources */,
 				FB96FB832117DB2400B21135 /* FrameImageCollectionViewController.m in Sources */,
-				FB866BB821143D2300411DEF /* UIImage+ImageCoder.m in Sources */,
 				FB96FBA12118502900B21135 /* SingletonOption.m in Sources */,
 				FB75498D211309A1007A43B8 /* YYFrameImage.m in Sources */,
 				FB75496B2113040C007A43B8 /* AppDelegate.m in Sources */,

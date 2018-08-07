@@ -9,7 +9,6 @@
 #import "GifImage.h"
 #import "ImageUtil.h"
 #import "GifImageDecoder.h"
-#import "UIImage+ImageCoder.h"
 
 @implementation GifImage
 {
@@ -86,7 +85,7 @@
         if (decoder.frameCount > 1) {
             _decoder = decoder;
         }
-        self.decodedForDisplay = YES;
+        //self.decodedForDisplay = YES;
     }
     return self;
 }

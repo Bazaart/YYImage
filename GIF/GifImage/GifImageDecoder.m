@@ -9,7 +9,6 @@
 #import "GifImageDecoder.h"
 #import <pthread.h>
 #import "ImageUtil.h"
-#import "UIImage+ImageCoder.h"
 #import <MobileCoreServices/MobileCoreServices.h>
 
 @implementation GifImageDecoder
@@ -285,7 +284,7 @@
         UIImage *image = [UIImage imageWithCGImage:imageRef scale:_scale orientation:_orientation];
         CFRelease(imageRef);
         if (!image) return nil;
-        image.decodedForDisplay = decoded;
+        //image.decodedForDisplay = decoded;
         frame.image = image;
         return frame;
     }
@@ -329,7 +328,7 @@
     CFRelease(imageRef);
     if (!image) return nil;
     
-    image.decodedForDisplay = YES;
+    //image.decodedForDisplay = YES;
     frame.image = image;
     if (extendToCanvas) {
         frame.pixelWidth = _pixelWidth;
